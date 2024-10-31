@@ -1,0 +1,26 @@
+            Thread chicken = new Thread(Chicken);
+            Thread egg = new Thread(Egg);
+            Console.WriteLine("И так, спор НАЧАТЬ!");
+            egg.Start();
+            chicken.Start();
+            egg.Join();
+            chicken.Join();
+            if (chicken.IsAlive)
+            {
+                Console.WriteLine("ПЕРВАЯ ПОЯВИЛАСЬ КУРИЦА, ДА, Я ТАК И ЗНАЛ");
+            }
+            else
+            {
+                Console.WriteLine("ТАК, А ВОТ ЭТО НЕОЖИДАННО, НО ПЕРВЫМ ПОЯВИЛОСЬ ЯЙЦО");
+            }
+        }
+        static void Chicken()
+        {
+            Console.WriteLine("КУРОЧКА");
+        }
+        static void Egg()
+        {
+            Console.WriteLine("ЕГГ");
+        }
+    }
+}
